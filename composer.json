@@ -63,10 +63,10 @@
     },
 
     "autoload": {
-        "psr-0": { "padivan\\ImagineBundle": "" }
+        "psr-0": { "Liip\\ImagineBundle": "" }
     },
 
-    "target-dir": "padivan/ImagineBundle",
+    "target-dir": "Liip/ImagineBundle",
 
     "config": {
         "bin-dir": "bin"
