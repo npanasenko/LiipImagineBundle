@@ -72,7 +72,8 @@
                 "version": "0.7",
                 "source": {
                     "url": "https://github.com/padivan/Imagine",
-                    "type": "git"
+                    "type": "git",
+                    "reference": "cb4c8594dfccbb6b0dc6d7b4c317d565524b0b09"
                 }
             }
         }
