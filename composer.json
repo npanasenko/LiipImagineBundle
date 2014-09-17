@@ -19,7 +19,7 @@
         "imagine": {
             "type": "package",
             "package": {
-                "name": "padivan/imagine",
+                "name": "imagine/imagine",
                 "description": "custom imagine",
                 "version": "0.7",
                 "source": {
