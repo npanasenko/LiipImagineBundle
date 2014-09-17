@@ -1,5 +1,5 @@
 {
-    "name": "liip/imagine-bundle",
+    "name": "padivan/imagine-bundle",
     "type": "symfony-bundle",
     "description": "This Bundle assists in imagine manipulation using the imagine library",
     "keywords": ["imagine", "image"],
@@ -63,10 +63,10 @@
     },
 
     "autoload": {
-        "psr-0": { "Liip\\ImagineBundle": "" }
+        "psr-0": { "padivan\\ImagineBundle": "" }
     },
 
-    "target-dir": "Liip/ImagineBundle",
+    "target-dir": "padivan/ImagineBundle",
 
     "config": {
         "bin-dir": "bin"
