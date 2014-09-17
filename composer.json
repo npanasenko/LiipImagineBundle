@@ -61,6 +61,8 @@
         "bin-dir": "bin"
     },
 
+    "target-dir": "Liip/ImagineBundle",
+
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev",
