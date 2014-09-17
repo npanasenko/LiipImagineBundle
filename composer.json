@@ -15,9 +15,24 @@
     "archive": {
         "exclude": ["/Tests"]
     },
+    "repositories": {
+        "imagine": {
+            "type": "package",
+            "package": {
+                "name": "padivan/imagine",
+                "description": "custom imagine",
+                "version": "0.7",
+                "source": {
+                    "url": "https://github.com/padivan/Imagine",
+                    "type": "git",
+                    "reference": "cb4c8594dfccbb6b0dc6d7b4c317d565524b0b09"
+                }
+            }
+        }
+    },
     "require": {
         "php":                      ">=5.3.2",
-        "imagine/Imagine":          "~0.5,<0.7",
+        "padivan/imagine":          ">=0.7",
         "symfony/finder":           "~2.3",
         "symfony/filesystem":       "~2.3",
         "symfony/options-resolver": "~2.3",
@@ -61,21 +76,6 @@
         "branch-alias": {
             "dev-master": "1.0.x-dev",
             "dev-0.x": "0.x-dev"
-        }
-    },
-    "repositories": {
-        "padivan/imagine": {
-            "type": "package",
-            "package": {
-                "name": "padivan/imagine",
-                "description": "custom imagine",
-                "version": "0.7",
-                "source": {
-                    "url": "https://github.com/padivan/Imagine",
-                    "type": "git",
-                    "reference": "cb4c8594dfccbb6b0dc6d7b4c317d565524b0b09"
-                }
-            }
         }
     }
 }
