@@ -5,7 +5,6 @@ namespace Liip\ImagineBundle\Imagine\Cache\Resolver;
 use Doctrine\Common\Cache\Cache;
 use Liip\ImagineBundle\Binary\BinaryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class CacheResolver implements ResolverInterface
 {
@@ -35,9 +34,9 @@ class CacheResolver implements ResolverInterface
      * @param Cache $cache
      * @param ResolverInterface $cacheResolver
      * @param array $options
-     * @param OptionsResolverInterface $optionsResolver
+     * @param OptionsResolver $optionsResolver
      */
-    public function __construct(Cache $cache, ResolverInterface $cacheResolver, array $options = array(), OptionsResolverInterface $optionsResolver = null)
+    public function __construct(Cache $cache, ResolverInterface $cacheResolver, array $options = array(), OptionsResolver $optionsResolver = null)
     {
         $this->cache = $cache;
         $this->resolver = $cacheResolver;
@@ -222,18 +221,16 @@ class CacheResolver implements ResolverInterface
         return false;
     }
 
-    protected function setDefaultOptions(OptionsResolverInterface $resolver)
+    protected function setDefaultOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'global_prefix' => 'liip_imagine.resolver_cache',
             'prefix' => get_class($this->resolver),
             'index_key' => 'index',
-        ));
+        ]);
 
-        $resolver->setAllowedTypes(array(
-            'global_prefix' => 'string',
-            'prefix' => 'string',
-            'index_key' => 'string',
-        ));
+        $resolver->setAllowedTypes('global_prefix', 'string');
+        $resolver->setAllowedTypes('prefix', 'string');
+        $resolver->setAllowedTypes('index_key', 'string');
     }
 }

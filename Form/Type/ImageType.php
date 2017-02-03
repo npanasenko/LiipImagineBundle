@@ -5,8 +5,7 @@ namespace Liip\ImagineBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
-
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * ImageType
@@ -25,7 +24,7 @@ class ImageType extends AbstractType
         $view->vars['link_attr']    = $options['link_attr'];
     }
 
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired(array(
             'image_path',
@@ -39,6 +38,7 @@ class ImageType extends AbstractType
             'link_attr' => array(),
         ));
     }
+
 
     public function getParent()
     {
