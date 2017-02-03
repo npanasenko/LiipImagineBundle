@@ -167,12 +167,12 @@ class CacheManager
         );
 
         if (empty($runtimeConfig)) {
-            $filterUrl = $this->router->generate('liip_imagine_filter', $params, true);
+            $filterUrl = $this->router->generate('liip_imagine_filter', $params, RouterInterface::ABSOLUTE_URL);
         } else {
             $params['filters'] = $runtimeConfig;
             $params['hash'] = $this->signer->sign($path, $runtimeConfig);
 
-            $filterUrl = $this->router->generate('liip_imagine_filter_runtime', $params, true);
+            $filterUrl = $this->router->generate('liip_imagine_filter_runtime', $params, RouterInterface::ABSOLUTE_URL);
         }
 
         return $filterUrl;
