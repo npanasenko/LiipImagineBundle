@@ -2,7 +2,6 @@
 
 namespace Liip\ImagineBundle\Imagine\Cache\Resolver;
 
-use Aws\S3\Enum\CannedAcl;
 use Aws\S3\S3Client;
 use Liip\ImagineBundle\Binary\BinaryInterface;
 use Liip\ImagineBundle\Exception\Imagine\Cache\Resolver\NotStorableException;
@@ -48,7 +47,7 @@ class AwsS3Resolver implements ResolverInterface
      * @param string $acl The ACL to use when storing new objects. Default: owner read/write, public read
      * @param array $objUrlOptions A list of options to be passed when retrieving the object url from Amazon S3.
      */
-    public function __construct(S3Client $storage, $bucket, $acl = CannedAcl::PUBLIC_READ, array $objUrlOptions = array())
+    public function __construct(S3Client $storage, $bucket, $acl = 'public-read', array $objUrlOptions = array())
     {
         $this->storage = $storage;
         $this->bucket = $bucket;
@@ -175,7 +174,7 @@ class AwsS3Resolver implements ResolverInterface
      * @param string $key The name of the option.
      * @param mixed $value The value to be set.
      *
-     * @return AmazonS3Resolver $this
+     * @return self
      */
     public function setObjectUrlOption($key, $value)
     {
@@ -210,7 +209,7 @@ class AwsS3Resolver implements ResolverInterface
      */
     protected function getObjectUrl($path)
     {
-        return $this->storage->getObjectUrl($this->bucket, $path, 0, $this->objUrlOptions);
+        return $this->storage->getObjectUrl($this->bucket, $path);
     }
 
     /**
