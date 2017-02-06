@@ -8,7 +8,6 @@ use Liip\ImagineBundle\Imagine\Filter\FilterConfiguration;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\EventDispatcher\Event;
 use Liip\ImagineBundle\ImagineEvents;
 use Liip\ImagineBundle\Events\CacheResolveEvent;
 
